@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HotelApp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- PAGINA PRINCIPAL -->
+        <div data-role="page" id="home">
+            <div data-role="header"><h1>HOTEL APP</h1></div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#nr1">Reservar</a></li>
+                    <li><a href="#historial">Historial</a></li>
+                    <li><a href="#politicas" data-transition="slideup">Políticas</a></li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <span style="font-size:8pt;">Todos Los Derechos Reservados &copy;</span>
+                <a href="#nosotros" data-transition="slideup">Nosotros</a>
+            </div>
+        </div>
+        <!-- PAGINA PRINCIPAL -->
+        
+        <!-- PAGINA INFORMACION NOSOTROS -->
+        <div data-role="page" id="nosotros">
+            <div data-role="header">
+                <a href="#" data-rel="back">Atrás</a>
+                <h1>NOSOTROS</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <p>To make a list filterable, simply add the data-filter="true" attribute to the list. The framework will then append a search box above the list and add the behavior to filter out list items that don't  contain the current search string as the user types.
+                </p>
+            </div>
+        </div>
+        <!-- PAGINA INFORMACION NOSOTROS -->
+        
+        <!-- PAGINA INFORMACION POLITICAS -->
+        <div data-role="page" id="politicas">
+            <div data-role="header">
+                <a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Atrás</a>
+                <h1>POLITICAS</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <p>TGo to your new repository hello-world.
+                    Click the drop down at the top of the file list that says branch: master.
+                    Type a branch name, readme-edits, into the new branch text box.
+                    Select the blue Create branch box or hit “Enter” on your keyboard.
+                </p>
+            </div>
+        </div>
+        <!-- PAGINA INFORMACION POLITICAS -->
+        
+        <!-- PAGINA DE HISTORIAL DE RESERVACIONES -->
+        <div data-role="page" id="historial">
+            <div data-role="header">
+                <a href="#" data-rel="back">Atrás</a>
+                <h1>HISTORIAL</h1>
+            </div>
+            <div role="main" class="ui-content">                
+            </div>
+        </div>
+        <!-- PAGINA DE HISTORIAL DE RESERVACIONES -->
+        
+        <!-- PAGINA DE RESERVACION 1 -->
+        <div data-role="page" id="nr1">
+            <div data-role="header">
+                <h1>RESERVAR</h1>
+            </div>
+            <div role="main" class="ui-content">  
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Datos de Reserva</li>
+                    <li>
+                        <select id="nrPer">
+                            <option value="">Personas</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select id="nrDia">
+                            <option value="">Dias</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="#" class="ui-btn-active">Siguiente</a>
+                        </li>
+                        <li>
+                            <a href="#home">
+                                Cancelar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- PAGINA DE RESERVACION 1 -->
+        
+        <!-- PAGINA DE RESERVACION 2 -->
+        <div data-role="page" id="nr2">
+            <div data-role="header">
+                <h1>RESERVAR</h1>
+            </div>
+            <div role="main" class="ui-content">  
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">TIPO DE HABITACIÓN</li>
+                    <li>
+                        <a href="#">Suite</a>
+                    </li>
+                    <li>
+                        <a href="#">Doble</a>
+                    </li>
+                    <li>
+                        <a href="#">Sencilla</a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="#" class="ui-btn-active">Reservar.</a>
+                        </li>
+                        <li>
+                            <a href="#home">
+                                Cancelar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- PAGINA DE RESERVACION 2 -->
+        
+        <!-- PAGINA DE REGISTRO -->
+        <div data-role="page" id="registro">
+            <div data-role="header">
+                <h1>REGISTRO</h1>
+            </div>
+            <div role="main" class="ui-content">  
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">DATOS PERSONALES</li>
+                    <li>
+                        <input type="text" id="regNom" placeholder="Nombre Completo">
+                    </li>
+                    <li>
+                        <input type="email" id="regMail" placeholder="Correo Electronico">
+                    </li>
+                    <li>
+                        <input type="tel" id="regTel" placeholder="Telefono">
+                    </li>
+                    <li id="regFoto">
+                        <a href="#" id="tomarFoto">Tomar Foto</a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="#" class="ui-btn-active">Registrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- PAGINA DE REGISTRO -->
+        
+        <!-- SE CARGAN LIBRERIAS -->
+        <script src="js/jquery-1.12.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/actions.js"></script>
+        <!-- SE CARGAN LIBRERIAS -->
+    </body>
+</html>
