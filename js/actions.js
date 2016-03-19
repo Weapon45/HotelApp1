@@ -20,7 +20,7 @@ var fn = {
         
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
         if(nom != '' && mail != '' && tel != '')
-            alert('Sincronizar');
+            window.location.href = '#home';
         else
             alert('Todos Los Campos Son Requeridos');        
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
