@@ -1,4 +1,7 @@
 var fn = {
+	ready: function(){
+		document.addEventListener("deviceready",fn.init,false);
+	},
     init: function(){
         if(!fn.estaRegistrado())
             window.location.href = '#registro';
@@ -19,8 +22,8 @@ var fn = {
         // -- SE OBTIENE VALORES DE CAMPOS --
         
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
-        if(nom != '' && mail != '' && tel != '')
-            window.location.href = '#home';
+        if(nom != '' && mail != '' && tel != '' && foto != undefined)
+            alert('Sincronizar');
         else
             alert('Todos Los Campos Son Requeridos');        
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
