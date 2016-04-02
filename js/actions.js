@@ -16,7 +16,7 @@ var fn = {
     // --- FUNCIONES DE REGISTRO ---
     estaRegistrado: function(){
 		var usr = window.localStorage.getItem("user");
-		if(usr == undefined || usr ==''){			
+		if(usr == undefined || usr == ''){			
         	return false;
 		}
 		else{
