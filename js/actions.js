@@ -16,7 +16,7 @@ var fn = {
     // --- FUNCIONES DE REGISTRO ---
     estaRegistrado: function(){
 		var usr = window.localStorage.getItem("user");
-		if(usr == undefined || usr==''){			
+		if(usr == undefined || usr == ''){			
         	return false;
 		}
 		else{
@@ -33,12 +33,13 @@ var fn = {
         
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
         if(nom != '' && mail != '' && tel != '' && foto != undefined)
+			alert("entro");
            $.ajax({
 			  method: "POST",
 			  url: "http://carlos.igitsoft.com/apps/test.php",
 			  data: { nom: nom, mail: mail, tel: tel }
 			}).done(function( msg ) {
-			   alert(1);
+			   alert(msg);
 				if(msg == 1){
 					ft.transfer(foto);
 				}
