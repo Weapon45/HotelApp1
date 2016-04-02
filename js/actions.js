@@ -8,6 +8,10 @@ var fn = {
         // -- MANDO A LLAMAR EL BOTON QUE ESTA DENTRO DEL DIV ---
         $('#registro div[data-role=footer] a').click(fn.registrar);
         // -- MANDO A LLAMAR EL BOTON QUE ESTA DENTRO DEL DIV ---
+		
+		// -- MANDO A LLAMAR EL BOTON TOMAR FOTO --
+		$('#tomarFoto').click(capture.takePhoto);
+		// -- MANDO A LLAMAR EL BOTON TOMAR FOTO --
             },
     // --- FUNCIONES DE REGISTRO ---
     estaRegistrado: function(){
