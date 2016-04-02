@@ -17,4 +17,4 @@ var capture = {
 	takePhoto: function(){
 		navigator.device.capture.captureImage(capture.success, capture.captureError, {limit:2});
 	}
-}
+};

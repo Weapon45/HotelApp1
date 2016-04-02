@@ -11,7 +11,13 @@ var fn = {
             },
     // --- FUNCIONES DE REGISTRO ---
     estaRegistrado: function(){
-        return false;
+		var usr = window.localStorage.getItem("user");
+		if(usr == undefined || usr==''){			
+        	return false;
+		}
+		else{
+			return true;
+		}
     },
     registrar: function(){
         // -- SE OBTIENE VALORES DE CAMPOS --
@@ -23,7 +29,15 @@ var fn = {
         
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
         if(nom != '' && mail != '' && tel != '' && foto != undefined)
-            alert('Sincronizar');
+           $.ajax({
+			  method: "POST",
+			  url: "http://carlos.igitsoft.com/apps/test.php",
+			  data: { nom: nom, mail: mail, tel: tel }
+			}).done(function( msg ) {
+				if(msg==1){
+					ft.transfer(foto);
+				}
+			});
         else
             alert('Todos Los Campos Son Requeridos');        
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
@@ -31,4 +45,4 @@ var fn = {
     
     // --- FUNCIONES DE REGISTRO ---
 };    
-$(fn.init);
+$(fn.ready);
