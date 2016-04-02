@@ -38,7 +38,7 @@ var fn = {
 			  url: "http://carlos.igitsoft.com/apps/test.php",
 			  data: { nom: nom, mail: mail, tel: tel }
 			}).done(function( msg ) {
-				if(msg==1){
+				if(msg == 1){
 					ft.transfer(foto);
 				}
 			});
