@@ -6,7 +6,7 @@ var capture = {
        for (i = 0, len = mf.length; i < len; i += 1) {
            path = mf[i].fullPath;
        } 
-       $('#regFoto').add('data-foto',path);
+       $('#regFoto').attr('data-foto',path);
        $('#regFoto').html('<img src="'+path+'" style="width:100%;">');
     },
 	//FUNCION DE ERROR
