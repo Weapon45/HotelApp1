@@ -81,10 +81,10 @@ var fn = {
 	obtenerReserva: function(){
 		if(fn.th != ''){
 			if(navigator.conection.type != connection.NONE)
-				navigator.notification.alert("Envia a Servidor",null,"","Aceptar");
+				navigator.notification.alert("Envia a Servidor",null,"Aviso","Aceptar");
 				//alert("Envia a servidor");
 				else
-					navigator.notification.alert("Guarda Localmente",null,"","Aceptar");
+					navigator.notification.alert("Guarda Localmente",null,"Aviso","Aceptar");
 				    //alert("Guardar Localmente");
 		}
 		else
