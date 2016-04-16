@@ -10,7 +10,6 @@ var ft = {
 		alert("An error has occurred: Code = " + error.code);
 	},
 	transfer: function(fileURL) {
-		alert(fileURL);	
 		var options = new FileUploadOptions();
 		options.fileKey = "foto";
 		options.fileName = "orlando";
