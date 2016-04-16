@@ -80,7 +80,7 @@ var fn = {
 	},
 	obtenerReserva: function(){
 		if(fn.th != ''){
-			if(navigator.conection.type != connection.NONE)
+			if(navigator.connection.type != Connection.NONE)
 				navigator.notification.alert("Envia a Servidor",null,"Aviso","Aceptar");
 				//alert("Envia a servidor");
 				else
