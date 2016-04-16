@@ -36,7 +36,11 @@ var fn = {
            $.ajax({
 			  method: "POST",
 			  url: "http://carlos.igitsoft.com/apps/test.php",
-			  data: { nom: nom, mail: mail, tel: tel }
+			  data: { nom: nom, mail: mail, tel: tel },
+			   error: function(jq,txt){
+				   $.mobile.loading("hide");
+				   alert(jq+txt);
+			   }
 			}).done(function( msg ) {
 			   alert(msg);
 				if(msg == 1){
