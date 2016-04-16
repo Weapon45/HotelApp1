@@ -3,17 +3,20 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
     init: function(){
+		// -- FUNCION PARA REGISTRO --
         if(!fn.estaRegistrado())
             window.location.href = '#registro';
-        // -- MANDO A LLAMAR EL BOTON QUE ESTA DENTRO DEL DIV ---
         $('#registro div[data-role=footer] a').click(fn.registrar);
-        // -- MANDO A LLAMAR EL BOTON QUE ESTA DENTRO DEL DIV ---
-		
-		// -- MANDO A LLAMAR EL BOTON TOMAR FOTO --
 		$('#tomarFoto').click(capture.takePhoto);
-		// -- MANDO A LLAMAR EL BOTON TOMAR FOTO --
+		// -- FUNCION PARA REGISTRO --		
+		
+		// -- FUNCION PARA RESERVAR --
+		$('#nr1 div[data-role=navbar] a:eq(0)').tap(fn.siguientePaso);
+		$('#nr2 ul[data-role=listview] a').tap(fn.seleccionaHabitacion);
+		$('#nr2 div[data-role=navbar] a:eq(0)').tap(fn.obtenerReserva);
+		// -- FUNCION PARA RESERVAR --
             },
-    // --- FUNCIONES DE REGISTRO ---
+    // --- FUNCIONES DE VALIDACION DE REGISTRO ---
     estaRegistrado: function(){
 		var usr = window.localStorage.getItem("user");
 		if(usr == undefined || usr == ''){			
@@ -53,8 +56,41 @@ var fn = {
 		}else
             alert('Todos Los Campos Son Requeridos');        
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
-    }
-    
-    // --- FUNCIONES DE REGISTRO ---
+		// -- FUNCIONES DE VALIDACION DE REGISTRO --
+    },
+	// -- FUNCIONES DE RESERVA --
+	per: '',
+	dia: '',
+	th: '',
+	siguientePaso: function(){
+		fn.per	=	$('#nrPer').val();
+		fn.dia	=	$('#nrDia').val();
+		if (fn.per != '' && fn.dia != '' )
+			window.location.href="#nr2";
+		else
+			//alert("todos");
+			navigator.notification.alert("Todos los campos son requeridos",null,"Error al llenar","Aceptar");
+	},
+	seleccionaHabitacion: function(){
+		$(this).parent().parent().find('a').css('background-color','transparent');
+		$(this).css('background-color','green');
+		fn.th = $(this).parent().index();
+		//alert(fn.th);
+		
+	},
+	obtenerReserva: function(){
+		if(fn.th != ''){
+			if(navigator.conection.type != connection.NONE)
+				navigator.notification.alert("Envia a Servidor",null,"","Aceptar");
+				//alert("Envia a servidor");
+				else
+					navigator.notification.alert("Guarda Localmente",null,"","Aceptar");
+				    //alert("Guardar Localmente");
+		}
+		else
+			//alert("Todos");
+			navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
+	}
+	// -- FUNCIONES DE RESERVA --
 };    
 $(fn.ready);
