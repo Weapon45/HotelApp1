@@ -81,7 +81,8 @@ var fn = {
 	obtenerReserva: function(){
 		if(fn.th != ''){
 			if(navigator.connection.type != Connection.NONE)
-				navigator.notification.alert("Envia a Servidor",null,"Aviso","Aceptar");
+				server.sincronizar(fn.per,fn.dia,fn.th);
+				//navigator.notification.alert("Envia a Servidor",null,"Aviso","Aceptar");
 				//alert("Envia a servidor");
 				else
 					almacen.guardarReserva(fn.per,fn.dia,fn.th);
