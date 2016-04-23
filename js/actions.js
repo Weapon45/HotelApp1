@@ -84,7 +84,8 @@ var fn = {
 				navigator.notification.alert("Envia a Servidor",null,"Aviso","Aceptar");
 				//alert("Envia a servidor");
 				else
-					navigator.notification.alert("Guarda Localmente",null,"Aviso","Aceptar");
+					almacen.guardarReserva(fn.per,fn.dia,fn.th);
+					//navigator.notification.alert("Guarda Localmente",null,"Aviso","Aceptar");
 				    //alert("Guardar Localmente");
 		}
 		else
