@@ -12,7 +12,7 @@ var almacen = {
 	},
 	hacerReserva: function(tx){
 		tx.executeSql("CREATE TABLE IF NOT EXISTS reservas (pr,di,th)");
-		tx.executeSql("INSERT reservas (pr,di,th) VALUES ('"+ almacen.pr + "','" + almacen.di + "','" + almacen.th + "')");
+		tx.executeSql("INSERT INTO reservas (pr,di,th) VALUES ('"+ almacen.pr + "','" + almacen.di + "','" + almacen.th + "')");
 	},
 	error: function(){
 		alert("Error al acceder a la Base de Datos");
@@ -25,7 +25,7 @@ var almacen = {
 		
 	},
 	consultaReservas: function(tx){
-		tx.executeSql("", [], function(tx2, t){
+		tx.executeSql("SELECT * FROM reservas", [], function(tx2, t){
 					  for(i = 0; i < t.rows.length; i++){
 						  navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n" + "Dias: " + t.rows.item(i).di + "\n" + "Tipo de Habitación: " + t.rows.item(i).th,
 														function(btn){
