@@ -3,7 +3,7 @@ var server = {
 		   $.ajax({
 			  method: "POST",
 			  url: "http://carlos.igitsoft.com/apps/test.php",
-			  data: { Tipo: th, persona: pr, diasss: di },
+			  data: { personas: pr, dias: di, tipo: th },
 			   error: function(jq,txt){
 				   navigator.notification.alert("hubo un error al intentar sincronizar los datos guardados",null,"Error","Aceptar");
 			   }
@@ -11,7 +11,7 @@ var server = {
 	},
 	sincronizado : function(msg){
 		if(msg == 1) {
-			navigator.notification.alert("Los datos fueron sincronizador correctamente",null,"Sincronizado","Aceptar")
+			navigator.notification.alert("Los datos fueron sincronizador correctamente",null,"Sincronizado","Aceptar");
 		}
 	}
 }
