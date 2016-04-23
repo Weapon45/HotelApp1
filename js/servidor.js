@@ -13,5 +13,7 @@ var server = {
 		if(msg == 1) {
 			navigator.notification.alert("Los datos fueron sincronizador correctamente",null,"Sincronizado","Aceptar");
 		}
+		else
+			navigator.notification.alert("hubo un error al intentar sincronizar los datos guardados",null,"Error","Aceptar");
 	}
 }
