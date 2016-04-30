@@ -57,20 +57,20 @@ var almacen = {
 		
 	},
 	ConsultaHistorial: function(){
-		navigator.notification.alert("Entro",null,"Consulta","Aceptar");
+		//navigator.notification.alert("Entro",null,"Consulta","Aceptar");
 		almacen.db = window.openDatabase("hotelApp","1.0","HotelApp Storage",20000);
 		almacen.db.transaction(almacen.MostrarHistorial,almacen.error,null);
 	},
 	MostrarHistorial: function(tx4){
-		navigator.notification.alert("Entro a Mostrar",null,"Mostrar 1","Aceptar");
-		var grid = '';
+		//navigator.notification.alert("Entro a Mostrar",null,"Mostrar 1","Aceptar");
 		tx4.executeSql("SELECT * FROM historial", [], function(tx4, t){
-			grid = '<div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div></div>';
-			/*for(i = 0; i < t.rows.length; i++){
-				navigator.notification.alert("Entro al for",null,"Mostrar 1","Aceptar");
+			var grid = '<div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">PERSONAS</div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">DIAS</div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">TIPO</div></div></div>';
+			for(i = 0; i < t.rows.length; i++){
+				//navigator.notification.alert("Entro al for",null,"Mostrar 1","Aceptar");
 				grid += '<div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">' + t.rows.item(i).pr + '</div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">' + t.rows.item(i).di + '</div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">' + t.rows.item(i).th + '</div></div></div>';
-			}*/
+			}
+			$("#his").html(grid);
 		});
-		$("#his").html(grid);		
+				
 	}
 }
