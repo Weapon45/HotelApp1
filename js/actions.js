@@ -13,7 +13,7 @@ var fn = {
 		$('#nr1 div[data-role=navbar] a:eq(0)').tap(fn.siguientePaso);
 		$('#nr2 ul[data-role=listview] a').tap(fn.seleccionaHabitacion);
 		$('#nr2 div[data-role=navbar] a:eq(0)').tap(fn.obtenerReserva);
-		$('#historial').click(almacen.MostrarHistorial);
+		$('#his').tap(almacen.ConsultaHistorial);
 		
 		// -- SINCRONIZAR AUTOMATICAMENTE CUANDO SE CONECTE A INTERNET
 		document.addEventListener("online",almacen.leerReservas,false);
