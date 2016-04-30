@@ -55,5 +55,14 @@ var almacen = {
 	HistorialGuardado: function(){
 		navigator.notification.alert("Historial guardado Correctamente",null, "Felicidades", "Aceptar");
 		
+	},
+	MostrarHistorial: function(tx){
+		var grid = '';
+		tx.executeSql("SELECT * FROM historial", [], function(tx2,t){
+			for(i = 0; i < t.rows.length; i++){
+				grid = grid + '<div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">' + almacen.pr + '</div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">' + almacen.di + '</div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">' + almacen.th + '</div></div></div>';
+			}
+		});
+		$("his").html(grid);		
 	}
 }
