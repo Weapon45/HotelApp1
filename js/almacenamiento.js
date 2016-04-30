@@ -48,7 +48,7 @@ var almacen = {
 		almacen.db.transaction(almacen.insertarHistorial,almacen.error,almacen.HistorialGuardado);
 	},
 	insertarHistorial : function(tx){
-		tx.executeSql("CREATE TABLE IF NOT EXISTS historial (pr,di,th)");
+		tx.executeSql("CREATE TABLE IF NOT EXISTS historial (pr, di, th)");
 		tx.executeSql("INSERT INTO historial (pr,di,th) VALUES ('"+ almacen.pr + "','" + almacen.di + "','" + almacen.th + "')");
 		almacen.eliminarReservas(tx);
 	},
