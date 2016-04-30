@@ -7,14 +7,15 @@ var fn = {
         if(!fn.estaRegistrado())
             window.location.href = '#registro';
         $('#registro div[data-role=footer] a').click(fn.registrar);
-		$('#tomarFoto').click(capture.takePhoto);
-		// -- FUNCION PARA REGISTRO --		
+		$('#tomarFoto').click(capture.takePhoto);	
 		
 		// -- FUNCION PARA RESERVAR --
 		$('#nr1 div[data-role=navbar] a:eq(0)').tap(fn.siguientePaso);
 		$('#nr2 ul[data-role=listview] a').tap(fn.seleccionaHabitacion);
 		$('#nr2 div[data-role=navbar] a:eq(0)').tap(fn.obtenerReserva);
-		// -- FUNCION PARA RESERVAR --
+		
+		// -- SINCRONIZAR AUTOMATICAMENTE CUANDO SE CONECTE A INTERNET
+		document.addEventListener("online",almacen.leerReservas,false);
             },
     // --- FUNCIONES DE VALIDACION DE REGISTRO ---
     estaRegistrado: function(){
@@ -32,7 +33,6 @@ var fn = {
         var mail = $('#regMail').val();
         var tel = $('#regTel').val();
         var foto = $('#regFoto').data('foto');
-        // -- SE OBTIENE VALORES DE CAMPOS --
         
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
         if(nom != '' && mail != '' && tel != '' && foto != undefined){
@@ -55,8 +55,6 @@ var fn = {
 			});
 		}else
             alert('Todos Los Campos Son Requeridos');        
-        // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
-		// -- FUNCIONES DE VALIDACION DE REGISTRO --
     },
 	// -- FUNCIONES DE RESERVA --
 	per: '',
@@ -93,6 +91,5 @@ var fn = {
 			//alert("Todos");
 			navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
 	}
-	// -- FUNCIONES DE RESERVA --
 };    
 $(fn.ready);
