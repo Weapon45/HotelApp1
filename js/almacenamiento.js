@@ -65,7 +65,7 @@ var almacen = {
 		navigator.notification.alert("Entro a Mostrar",null,"Mostrar 1","Aceptar");
 		var grid = '';
 		tx4.executeSql("SELECT * FROM historial", [], function(tx4, t){
-			grid = '<div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">PERSONAS</div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">DIAS</div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">TIPO</div></div></div>';
+			grid = '<div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div></div>';
 			/*for(i = 0; i < t.rows.length; i++){
 				navigator.notification.alert("Entro al for",null,"Mostrar 1","Aceptar");
 				grid += '<div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">' + t.rows.item(i).pr + '</div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">' + t.rows.item(i).di + '</div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">' + t.rows.item(i).th + '</div></div></div>';
